@@ -1,29 +1,26 @@
-<%-- 
-我要查詢客戶資料:
-SELECT c.CUSTOMER_ID, c.DISCOUNT_CODE, c."NAME", c.PHONE, c.EMAIL, c.CREDIT_LIMIT FROM APP.CUSTOMER c
---%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ include file="datasource.jspf" %>
-<sql:query dataSource= "${mydb}" var ="customer">
-    SELECT c.CUSTOMER_ID, c.DISCOUNT_CODE, c."NAME", c.PHONE, c.EMAIL, c.CREDIT_LIMIT FROM APP.CUSTOMER c
+<sql:query dataSource="${mydb}" var="customers">
+    SELECT c.CUSTOMER_ID, c.DISCOUNT_CODE, c."NAME", c.PHONE, c.EMAIL, c.CREDIT_LIMIT 
+    FROM APP.CUSTOMER c
+    ORDER BY ${sortcolname} ${sortflag}
 </sql:query>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Page</title>
+        <%@ include file="head.jspf" %>
     </head>
     <body>
-        <%@ include file="menu.jspf"%>
+        <%@ include file="menu.jspf" %>
         <table class="pure-table pure-table-bordered" width="100%">
             <thead>
-                <tr>
+                <tr style="cursor: help" title="按我一下可以排序" >
                     <th>#</th>
-                    <th>CUSTOMER_ID</th>
+                    <th onclick="sort('CUSTOMER_ID')">CUSTOMER_ID</th>
                     <th>DISCOUNT_CODE</th>
                     <th>NAME</th>
                     <th>PHONE</th>
@@ -31,18 +28,21 @@ SELECT c.CUSTOMER_ID, c.DISCOUNT_CODE, c."NAME", c.PHONE, c.EMAIL, c.CREDIT_LIMI
                     <th>CREDIT_LIMIT</th>
                 </tr>
             </thead>
+
             <tbody>
-                <c:forEach items="${customer.rows}" var="p" varStatus="counter">
+                <c:forEach items="${customers.rows}" var="c" varStatus="counter">
                     <tr>
                         <td>${counter.count}</td>
-                        <td>${p.CUSTOMER_ID}</td>
-                        <td>${p.DISCOUNT_CODE}</td>
-                        <td>${p.NAME}</td>
-                        <td>${p.PHONE}</td>
-                        <td>${p.EMAIL}</td>
-                        <td>${p.CREDIT_LIMIT}</td>
+                        <td>${c.CUSTOMER_ID}</td>
+                        <td>${c.DISCOUNT_CODE}</td>
+                        <td>${c.NAME}</td>
+                        <td>${c.PHONE}</td>
+                        <td>${c.EMAIL}</td>
+                        <td>${c.CREDIT_LIMIT}</td>
                     </tr>
                 </c:forEach>
+
             </tbody>
+        </table>
     </body>
 </html>

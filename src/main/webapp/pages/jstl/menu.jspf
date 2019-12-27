@@ -3,4 +3,5 @@
 <div class="pure-menu pure-menu-horizontal">
     <a href="jdbc_product.jsp" class="pure-menu-heading pure-menu-link">Product</a>
     <a href="jdbc_customer.jsp" class="pure-menu-heading pure-menu-link">Customer</a>
+    <a href="jdbc_pu_view.jsp" class="pure-menu-heading pure-menu-link">PU_VIEW</a>
 </div>
