@@ -61,12 +61,20 @@
             <artifactId>eclipselink</artifactId>
             <version>2.7.5</version>
         </dependency>
+        
         <!-- ws -->
         <dependency>
             <groupId>org.glassfish.tyrus.bundles</groupId>
             <artifactId>tyrus-standalone-client-jdk</artifactId>
             <version>1.13</version>
         </dependency>     
+        
+        <!-- yahoofinance-api -->
+        <dependency>
+            <groupId>com.yahoofinance-api</groupId>
+            <artifactId>YahooFinanceAPI</artifactId>
+            <version>3.15.0</version>
+        </dependency>
     </dependencies>
 
     <build>

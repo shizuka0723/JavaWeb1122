@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>my</short-name>
+  <uri>/WEB-INF/tlds/my</uri>
+  
+  <tag>
+      <name>prime</name>
+      <tag-class>com.study.web.mytag.Primetag</tag-class>
+      <body-content>empty</body-content>
+      <attribute>
+          <name>num</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>fib</name>
+      <tag-class>com.study.web.mytag.FibTag</tag-class>
+      <body-content>empty</body-content>
+      <attribute>
+          <name>num</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>lucky</name>
+      <tag-class>com.study.web.mytag.LuckyTag</tag-class>
+      <body-content>JSP</body-content>
+      <attribute>
+          <name>n</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>loop</name>
+      <tag-class>com.study.web.mytag.LoopTag</tag-class>
+      <body-content>JSP</body-content>
+      <attribute>
+          <name>count</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>mark</name>
+      <tag-class>com.study.web.mytag.MarkTag</tag-class>
+      <body-content>JSP</body-content>
+      <attribute>
+          <name>key</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>stock</name>
+      <tag-class>com.study.web.mytag.StockTag</tag-class>
+      <body-content>empty</body-content>
+      <attribute>
+          <name>symbol</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
+  
+  <tag>
+      <name>stock2</name>
+      <tag-class>com.study.web.mytag.Stock2Tag</tag-class>
+      <body-content>scriptless</body-content>
+  </tag>
+  
+</taglib>
