@@ -76,4 +76,11 @@
       <body-content>scriptless</body-content>
   </tag>
   
+  <tag>
+      <name>add</name>
+      <tag-class>com.study.web.mytag.AddTag</tag-class>
+      <body-content>empty</body-content>
+      <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+  
 </taglib>
